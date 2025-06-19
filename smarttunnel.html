@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART TUNNEL - Free Unlimited Secure VPN Service</title>
+    <meta name="description" content="SMART TUNNEL provides free unlimited secure VPN service with high-speed connections and global servers for browsing, streaming, and gaming.">
+         <link rel="shortcut icon" href="https://raw.githubusercontent.com/farhanansari888/SmartTunnel/main/IMG_20250619_122424_729.jpg" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --accent: #06b6d4;
+            --vpn: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, var(--primary), var(--vpn));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--vpn);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid var(--vpn);
+        }
+        
+        .download-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid var(--vpn);
+        }
+        
+        .download-card h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .download-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 15px 10px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(79, 70, 229, 0.4);
+        }
+        
+        .btn-vpn {
+            background: linear-gradient(90deg, var(--vpn), #059669);
+            animation: pulse-vpn 2s infinite;
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid var(--primary);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .screenshots {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 15px 0;
+            margin: 30px 0;
+            scrollbar-width: thin;
+        }
+        
+        .screenshot {
+            min-width: 250px;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.03);
+        }
+        
+        .how-to-use {
+            margin: 40px 0;
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        
+        .step-content {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            flex-grow: 1;
+        }
+        
+        .server-list {
+            margin: 30px 0;
+        }
+        
+        .server-item {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 3px solid var(--vpn);
+        }
+        
+        .server-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .server-ping {
+            color: var(--vpn);
+            font-weight: bold;
+        }
+        
+        .testimonials {
+            margin: 40px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .testimonial {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .testimonial-author img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        .faq-section {
+            margin: 40px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--accent);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        @keyframes pulse-vpn {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .step {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/farhanansari888/SmartTunnel/main/IMG_20250619_122424_729.jpg" alt="SMART TUNNEL">
+                <h1>SMART TUNNEL</h1>
+            </div>
+            <p class="tagline">Free Unlimited Secure VPN Service</p>
+            <div class="version-badge">
+                <i class="fas fa-download"></i> Version 4 (35.10 MB) - Android 7.0+
+            </div>
+        </header>
+        
+        <main>
+            <!-- Main Download Card -->
+            <div class="download-card">
+                <h2>Download SMART TUNNEL APK</h2>
+                <p>Get unlimited free VPN service with high-speed global servers</p>
+                
+                <div class="download-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Downloads</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Unlimited</div>
+                        <div class="stat-label">Bandwidth</div>
+                    </div>
+                </div>
+                
+                <a href="" class="btn btn-vpn">
+                    <i class="fas fa-download"></i> Download Now
+                </a>
+                <button class="btn btn-secondary" id="showFeatures">
+                    <i class="fas fa-server"></i> View Servers
+                </button>
+                
+                <div style="margin-top: 20px; font-size: 0.9rem; color: #94a3b8;">
+                    <i class="fas fa-shield-alt"></i> No Registration Required | No Data Logging
+                </div>
+            </div>
+            
+            <!-- Key Features -->
+            <div class="features-grid" id="featuresSection">
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Military Encryption</h3>
+                    <p>AES-256 encryption protects all your browsing activity and personal data</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Global Network</h3>
+                    <p>80+ countries with optimized servers for streaming and browsing</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>High Speed</h3>
+                    <p>Unlimited bandwidth with no speed throttling for seamless browsing</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>No Logs Policy</h3>
+                    <p>We never track or store your online activity or connection logs</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-unlock-alt"></i>
+                    <h3>Bypass Restrictions</h3>
+                    <p>Access blocked websites and content in your region</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>One-Tap Connect</h3>
+                    <p>Simple interface with quick connection to fastest server</p>
+                </div>
+            </div>
+            
+            <!-- Server List -->
+            <div class="server-list" id="serverSection">
+                <h2 style="margin-bottom: 20px; color: var(--primary);">
+                    <i class="fas fa-server"></i> Popular Server Locations
+                </h2>
+                
+                <div class="server-item">
+                    <div class="server-info">
+                        <i class="fas fa-flag-usa"></i>
+                        <div>
+                            <strong>United States</strong>
+                            <div style="font-size: 0.8rem;">New York, Los Angeles, Miami</div>
+                        </div>
+                    </div>
+                    <div class="server-ping">28ms</div>
+                </div>
+                
+                <div class="server-item">
+                    <div class="server-info">
+                        <i class="fas fa-flag-uk"></i>
+                        <div>
+                            <strong>United Kingdom</strong>
+                            <div style="font-size: 0.8rem;">London, Manchester</div>
+                        </div>
+                    </div>
+                    <div class="server-ping">35ms</div>
+                </div>
+                
+                <div class="server-item">
+                    <div class="server-info">
+                        <i class="fas fa-flag"></i>
+                        <div>
+                            <strong>Japan</strong>
+                            <div style="font-size: 0.8rem;">Tokyo, Osaka</div>
+                        </div>
+                    </div>
+                    <div class="server-ping">45ms</div>
+                </div>
+                
+                <div class="server-item">
+                    <div class="server-info">
+                        <i class="fas fa-flag"></i>
+                        <div>
+                            <strong>Germany</strong>
+                            <div style="font-size: 0.8rem;">Frankfurt, Berlin</div>
+                        </div>
+                    </div>
+                    <div class="server-ping">38ms</div>
+                </div>
+                
+                <div class="server-item">
+                    <div class="server-info">
+                        <i class="fas fa-flag"></i>
+                        <div>
+                            <strong>Singapore</strong>
+                            <div style="font-size: 0.8rem;">Singapore</div>
+                        </div>
+                    </div>
+                    <div class="server-ping">25ms</div>
+                </div>
+            </div>
+            
+            <!-- How to Use -->
+            <div class="how-to-use">
+                <h2 style="margin-bottom: 20px; color: var(--primary);">
+                    <i class="fas fa-book"></i> How to Install & Use
+                </h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download the APK</h3>
+                        <p>Click the download button above to get the SMART TUNNEL APK file (35.10 MB)</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Install the App</h3>
+                        <p>Open the downloaded APK file and install (enable "Install Unknown Sources" if prompted)</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Launch and Connect</h3>
+                        <p>Open the app and tap "Connect" to automatically select the fastest server</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Browse Securely</h3>
+                        <p>Your connection is now encrypted and secure</p>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2 style="margin-bottom: 20px; color: var(--primary);">
+                    <i class="fas fa-question-circle"></i> Frequently Asked Questions
+                </h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is SMART TUNNEL really free?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, SMART TUNNEL is completely free with unlimited bandwidth. We offer premium servers with even faster speeds that can be accessed by watching short ads.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Does SMART TUNNEL keep logs?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, we have a strict no-logs policy. We don't track or store your online activity, connection timestamps, or IP addresses.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I use SMART TUNNEL for streaming?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, SMART TUNNEL works with most streaming platforms including Netflix, Hulu, BBC iPlayer, and more. We regularly update our servers to bypass geo-restrictions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How many devices can I use?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can use SMART TUNNEL on up to 3 devices simultaneously with one account. For more devices, simply create additional accounts.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Final CTA -->
+            <div class="download-card" style="margin-top: 40px;">
+                <h2>Ready to Browse Freely?</h2>
+                <p>Download SMART TUNNEL now and enjoy secure, unrestricted internet access</p>
+                <a href="https://t.me/Chocolatefluffybot?start=Z2V0LTc2MjYwOTI0NzE0MDkzNw" class="btn btn-vpn" style="font-size: 1.2rem; padding: 15px 35px;">
+                    <i class="fas fa-download"></i> Download Now - 35.10 MB
+                </a>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #94a3b8;">
+                    <i class="fas fa-android"></i> Android 7.0+ | No Root Required
+                </p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 SMART TUNNEL. All rights reserved.</p>
+            
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://t.me/smarttunnel"><i class="fab fa-telegram"></i></a>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.8rem;">
+                SMART TUNNEL is not affiliated with any streaming services or websites. All trademarks belong to their respective owners.
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Toggle FAQ answers
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            answer.classList.toggle('show');
+            const icon = element.querySelector('i');
+            if (answer.classList.contains('show')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+        
+        // Smooth scroll to features
+        document.getElementById('showFeatures').addEventListener('click', function() {
+            document.getElementById('serverSection').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
