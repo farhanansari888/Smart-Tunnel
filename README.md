@@ -17,4 +17,16 @@
 </ul>
 </li>
 </ul>
+<hr>
+<h2>Overview</h2>
+<p>Smart-Tunnel is an open-source VPN platform focused on delivering fast, secure, and user-friendly internet connectivity. It combines an intuitive interface with comprehensive legal and support pages to enhance user engagement and trust. The core features include:</p>
+<ul class="list-disc pl-4 my-0">
+<li class="my-0">🛡️ <strong>Support &amp; FAQ:</strong> A dedicated contact interface for user support via Telegram and messaging forms.</li>
+<li class="my-0">🚀 <strong>Main Landing Pages:</strong> Engaging pages that highlight high-speed connections, global server access, and streaming capabilities.</li>
+<li class="my-0">⚙️ <strong>Legal &amp; Privacy:</strong> Transparent legal disclaimers and privacy policies to ensure compliance and user trust.</li>
+<li class="my-0">🔄 <strong>Automated Deployment:</strong> Continuous integration workflows for seamless updates and deployment.</li>
+<li class="my-0">🎯 <strong>Clear User Guidance:</strong> Terms and conditions to define user responsibilities and acceptable use.
+Smart-Tunnel empowers developers to build secure, scalable VPN solutions with a focus on usability and legal clarity.</li>
+</ul>
+<hr>
 </div>
